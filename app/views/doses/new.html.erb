@@ -1,0 +1,12 @@
+<!-- CREATE(ADD) NEW DOSE TO AN EXISTING COCKTAIL -->
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.association :ingredient %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back to cocktail", new_cocktail_path %>

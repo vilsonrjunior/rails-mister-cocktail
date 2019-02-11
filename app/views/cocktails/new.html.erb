@@ -1,0 +1,14 @@
+<!-- CREATE NEW COCKTAIL -->
+
+<%= simple_form_for [@cocktail] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.association :ingredients %>
+
+  <%= f.submit %>
+<% end %>
+
+<!-- link to index page -->
+<%= link_to "Back to list of cocktails", cocktails_path %>
+

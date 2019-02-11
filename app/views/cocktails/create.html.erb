@@ -1,0 +1,14 @@
+
+
+<h1>Cocktails#create</h1>
+<p>Find me in app/views/cocktails/create.html.erb</p>
+
+<%= simple_form_for [@cocktail] do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :ingredient %>
+  <%= f.text_field :ingredient %>
+
+  <%= f.submit %>
+<% end %>
