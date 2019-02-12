@@ -1,9 +1,33 @@
 <!-- HOME PAGE -->
+<!-- DISPLAY EXISTING COCKTAILS
+ALLOW USER TO CREATE NEW COCKTAIL -->
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href= class="tab-underlined active">List all</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Requests</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Contact</a>
+  </li>
+</ul>
 
 
-<% @cocktails.each do |cocktail| %>
-<%= cocktail.name %>
-<%= link_to cocktail.name, cocktail_path(cocktail.id) %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('helena-yankovska-434536-unsplash.jpg') %>)">
+  <h1>The Cocktail Book</h1>
+</div>
 
-<%= link_to "Create new cocktail", new_cocktail_path %>
+<div class = "container text-center">
+  <div class="cards">
+   <% @cocktails.each do |cocktail| %>
+   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('cocktail.jpg') %>)">
+       <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+  </div>
+   <% end %>
+</div>
+
+
+
+
+<h3><%= link_to "Create new cocktail", new_cocktail_path %></h3>

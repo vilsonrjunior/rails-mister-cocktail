@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # get 'cocktails/new'
   # get 'cocktails/create'
   resources :cocktails, only: [:new, :create, :show, :index] do
-    resources :doses, only: [:new, :create, :destroy]
+    resources :doses, only: [:new, :create]
   end
+
+  resources :doses, only: [:destroy]
 end
