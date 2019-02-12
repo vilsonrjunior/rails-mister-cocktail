@@ -2,7 +2,7 @@
 
 <div class = "container text-center">
 
-  <h1><%= @cocktail.name %></h1>
+  <h2><%= @cocktail.name %></h2>
   <p>Ingredients: </p>
 
   <ul style="list-style: none">
@@ -16,6 +16,6 @@
 <div class="container text-center">
 
 
-  <h4> <%= link_to "Add dose", new_cocktail_dose_path(@cocktail.id) %> </h4>
-  <h4><%= link_to "Back to list of cocktails", cocktails_path %></h4>
+  <h4 id="links"> <%= link_to "Add dose", new_cocktail_dose_path(@cocktail.id) %> </h4>
+  <h4 id="links"><%= link_to "Back to list of cocktails", cocktails_path %></h4>
 </div>

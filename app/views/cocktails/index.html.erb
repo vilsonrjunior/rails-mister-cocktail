@@ -15,19 +15,16 @@ ALLOW USER TO CREATE NEW COCKTAIL -->
 
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('helena-yankovska-434536-unsplash.jpg') %>)">
+  <%= link_to "Create new cocktail", new_cocktail_path, class: "btn btn-ghost"%>
   <h1>The Cocktail Book</h1>
 </div>
 
 <div class = "container text-center">
-  <div class="cards">
-   <% @cocktails.each do |cocktail| %>
-   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('cocktail.jpg') %>)">
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('cocktail.jpg') %>)">
        <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
-  </div>
-   <% end %>
+      </div>
+      <% end %>
 </div>
 
-
-
-
-<h3><%= link_to "Create new cocktail", new_cocktail_path %></h3>
