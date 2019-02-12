@@ -1,18 +1,21 @@
 <!-- DISPLAY GIVEN COCKTAIL BY ITS ID -->
 
+<div class = "container text-center">
 
-<%= @cocktail.name %>
-<p>Ingredients: </p>
-<ul>
+  <h1><%= @cocktail.name %></h1>
+  <p>Ingredients: </p>
 
-<% @cocktail.doses.each do |dose| %>
-  <li><%= dose.description %> <%= dose.ingredient.name %></li>
-<% end %>
-</ul>
+  <ul style="list-style: none">
+   <% @cocktail.doses.each do |dose| %>
+      <li><%= dose.description %> <%= dose.ingredient.name %></li>
+    <% end %>
+  </ul>
+
+</div>
+
+<div class="container text-center">
 
 
-
-
-<!-- "#{@cocktail.doses[2].description} #{@cocktail.doses[2].ingredient.name}" -->
-<%= link_to "Add dose", new_cocktail_dose_path(@cocktail.id) %>
-<%= link_to "Back to list of cocktails", cocktails_path %>
+  <h4> <%= link_to "Add dose", new_cocktail_dose_path(@cocktail.id) %> </h4>
+  <h4><%= link_to "Back to list of cocktails", cocktails_path %></h4>
+</div>
