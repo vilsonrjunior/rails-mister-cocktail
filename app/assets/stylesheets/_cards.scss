@@ -18,7 +18,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  a {
+    text-align: center;
+    color: white;
+  }
 }
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -67,11 +72,3 @@ h2, p {
 
 
 
-a {
-  text-align: center;
-  color: white;
-}
-
-#links {
- color: #222224;
-}

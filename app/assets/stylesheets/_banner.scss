@@ -1,6 +1,7 @@
 .banner {
   // display: inline;
   // margin: 200px;
+  // position: absolute;
   background-size: cover;
   background-position: center;
   height: 459px;
@@ -27,4 +28,11 @@
 }
 .btn-ghost:hover {
   opacity: 1;
+}
+
+.headerbtn {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+
 }

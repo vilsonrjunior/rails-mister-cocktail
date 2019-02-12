@@ -1,21 +1,23 @@
 <!-- DISPLAY GIVEN COCKTAIL BY ITS ID -->
 
-<div class = "container text-center">
-
-  <h2><%= @cocktail.name %></h2>
-  <p>Ingredients: </p>
-
-  <ul style="list-style: none">
-   <% @cocktail.doses.each do |dose| %>
-      <li><%= dose.description %> <%= dose.ingredient.name %> <%= link_to "Delete dose", dose_path(dose), :method => :delete %></li>
-    <% end %>
-  </ul>
-
+<div class="container text-center">
+    <h2><%= @cocktail.name %></h2>
+    <p>Ingredients: </p>
 </div>
 
-<div class="container text-center">
+<div class= "container text-center">
+  <ul style="list-style: none">
+    <% @cocktail.doses.each do |dose| %>
+       <li><%= dose.description %> <%= dose.ingredient.name %> <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, dose_path(dose) , :method => :delete %></li>
+      <% end %>
+    </ul>
+</div>
 
+  <div class="container text-center">
+    <h4 id="links"> <%= link_to "Add dose", new_cocktail_dose_path(@cocktail.id) %> </h4>
+     <h4 id="links"><%= link_to "Back to list of cocktails", cocktails_path %></h4>
+  </div>
 
-  <h4 id="links"> <%= link_to "Add dose", new_cocktail_dose_path(@cocktail.id) %> </h4>
-  <h4 id="links"><%= link_to "Back to list of cocktails", cocktails_path %></h4>
+<div class="cocktail_photo">
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 </div>

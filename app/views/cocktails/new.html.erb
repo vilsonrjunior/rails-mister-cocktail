@@ -1,11 +1,15 @@
 <!-- CREATE NEW COCKTAIL -->
-
-<%= simple_form_for [@cocktail] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class = "container text-center">
+  <div class="form">
+    <%= simple_form_for [@cocktail] do |f| %>
+        <%= f.input :name %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit %>
+    <% end %>
+ </div>
 
 <!-- link to index page -->
-<%= link_to "Back to list of cocktails", cocktails_path %>
+<p><%= link_to "Back to list of cocktails", cocktails_path %></p>
 
+</div>
